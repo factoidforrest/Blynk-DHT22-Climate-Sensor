@@ -36,12 +36,12 @@
 
 // You should get Auth Token in the Blynk App.
 // Go to the Project Settings (nut icon).
-char auth[] = "BLINK AUTH KEY GOES HERE";
+char auth[] = "YOUR BLYNK KEY FROM THE EMAIL";
 
 // Your WiFi credentials.
 // Set password to "" for open networks.
-char ssid[] = "WIFI SSID GOES HERE"; // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-char pass[] = "WIFI PASSWORD";
+char ssid[] = "YOUR SSID"; // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+char pass[] = "YOUR WIFI PASSWORD";
 
 
 DHTesp dht;
@@ -74,7 +74,7 @@ void setup()
   Serial.println("init");
   Blynk.begin(auth, ssid, pass);
 
-  dht.setup(4);
+  dht.setup(4, DHTesp::DHT22);
   timer.setInterval(5000, readClimate);
   Serial.println("setup complete");
 }
