@@ -32,7 +32,7 @@
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <BlynkSimpleEsp32.h>
-#include <DHT.h>
+#include <DHTesp.h>
 
 // You should get Auth Token in the Blynk App.
 // Go to the Project Settings (nut icon).
@@ -44,7 +44,7 @@ char ssid[] = "WIFI SSID GOES HERE"; // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 char pass[] = "WIFI PASSWORD";
 
 
-DHT dht;
+DHTesp dht;
 BlynkTimer timer;
 
 
