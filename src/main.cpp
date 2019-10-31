@@ -27,7 +27,8 @@
 /* Comment this out to disable prints and save space */
 #define BLYNK_PRINT Serial
 #define uS_TO_SECONDS_FACTOR 1000000  
-
+#define SLEEP_SECONDS 600 // SLEEP TIME How often you want the ESP to wake up and report
+// Note that if you read the temperature too often, the ESP gets warm and it could throw the reading if you have them in a case.  I'd do once a minute max if enclosed
 
 #include <BlynkSimpleEsp32.h>
 #include <DHTesp.h>
@@ -76,7 +77,7 @@ void setup()
   Blynk.run();
   readClimate();
   Serial.println("GOING TO SLEEP");
-  esp_sleep_enable_timer_wakeup(600 * uS_TO_SECONDS_FACTOR);
+  esp_sleep_enable_timer_wakeup(SLEEP_SECONDS * uS_TO_SECONDS_FACTOR);
   esp_deep_sleep_start();
 }
 
